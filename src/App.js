@@ -1,39 +1,61 @@
+//React
 import React, { useState } from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch } from '@fortawesome/free-solid-svg-icons'
-import keys from "./variables/keys";
 
+//Fontawesome
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
+
+//Components
+import WeatherInformation from './components/WeatherInformation.jsx';
+
+//Variables
+import api from "./variables/api";
+
+//Bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 
+// Own Styles
+import "./scss/main.scss";
+
 function App() {
-  const dateBuild = (d) => {
-    let [date, time] = d.toLocaleString('es-PE').split(' ');
-    return `Fecha: ${date} Hora: ${time}`;
+  let [query, setQuery] = useState("");
+  let [weather, setWeather] = useState({});
+
+  const search = (e) => {
+    if (e.key === "Enter") {
+      fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}&lang=es`)
+      .then((response) => response.json())
+      .then((response) => {
+        setWeather(response);
+        setQuery("");
+      });
+    }
   };
 
   return (
-    <div className="container">
-      <div className="row">
-        <div className="col-12 mb-3">
-          <h1>React Weather App</h1>
-        </div>
-        <div className="col-12">
-          <p><strong>{dateBuild(new Date())}</strong></p>
-        </div>
-        <div className="col-12">
-          <div className="input-group mb-3">
-            <input type="text" className="form-control" placeholder="Search" aria-label="Weather search" aria-describedby="search-box" />
-            <div className="input-group-append">
-              <span className="input-group-text" id="search-box">
-                <FontAwesomeIcon icon={faSearch} />
-              </span>
-            </div>
-          </div>
-        </div>
+    <div className="weather_container">
+      <div className="title_container">
+        <h1 className="title">React Weather App</h1>
       </div>
+
+      <div className="input_container">       
+        <input 
+          type="text" 
+          className="input_field"
+          aria-label="Weather search" 
+          placeholder="Search..."
+          onChange={(e) => setQuery(e.target.value)}
+          value={query}
+          onKeyPress={search} 
+        />
+        <div className="icon_content">
+          <FontAwesomeIcon icon={faSearch} />
+        </div> 
+      </div>
+      
+      { weather.main ? <WeatherInformation info={weather} /> : null }
     </div>
-    
   );
 }
 

@@ -1,0 +1,87 @@
+.wheather_card {
+	display: flex;
+	border-radius: 4px;
+	border: 1px solid $gray;
+	padding: remy(24) 0rem;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	flex-wrap: wrap;
+	width: 100%;
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	&.day {
+		background-image: url('#{$img-path-pv}/day.jpg');
+	}
+
+	&.evening {
+		background-image: url('#{$img-path-pv}/evening.jpg');
+	}
+
+	&.night {
+		background-image: url('#{$img-path-pv}/night.jpg');
+	}
+
+	.location_container {
+		width: 100%;
+		color: $white;
+
+		.location {
+			font-size: remy(40);
+			font-weight: bold;
+			text-shadow: 2px 5px $gray;
+			text-transform: uppercase;
+			margin-bottom: remy(16);
+		}
+
+		.humidity {
+			font-size: remy(30);
+			font-weight: bold;
+			text-shadow: 2px 5px $gray;
+			margin-bottom: remy(20);
+		}
+
+		.date {
+			font-weight: bold;
+			font-size: remy(20);
+			margin-bottom: remy(10);
+		}
+
+		.time {
+			font-weight: bold;
+			font-size: remy(20);
+			margin-bottom: remy(20);
+		}
+	}
+
+	.weather_container {
+		width: 100%;
+		color: $white;
+
+		.temperature {
+			font-size: remy(80);
+			font-weight: bold;
+			text-shadow: 2px 5px $gray;
+			margin-bottom: remy(16);
+		}
+
+		.weather {
+			font-size: remy(24);
+			font-weight: bold;
+			margin-bottom: remy(10);
+			text-transform: capitalize;
+			margin-bottom: remy(12);
+			display: flex;
+    	justify-content: center;
+    	align-items: center;
+    	text-align: center;
+		}
+
+		.temperature_range {
+			font-size: remy(18);
+			font-weight: bold;
+		}
+	}
+}
