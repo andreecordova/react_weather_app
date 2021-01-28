@@ -21,7 +21,7 @@ You can verify if you have node using this commands in your terminal:
 node -v
 ```
 
-Other thing you need is an api key from [openweather.org] (https://openweathermap.org/). You only must to login in in the website to get your own api key.
+Other thing you need is an api key from [openweather.org](https://openweathermap.org/). You only must to login in in the website to get your own api key.
 
 ### Installing
 
