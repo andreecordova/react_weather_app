@@ -1,4 +1,4 @@
-# Weather app
+# React Weather app
 
 A simple project to check the weather searching for cities and using the openweather api
 
