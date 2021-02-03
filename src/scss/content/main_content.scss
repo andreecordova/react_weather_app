@@ -12,28 +12,8 @@
 	}
 
 	.input_container {
-		display: flex;
 		width: 100%;
-		margin-bottom: remy(15);
-
-		.input_field {
-			width: 100%;
-			padding: remy(10);
-			outline: none;
-			border-radius: 4px 0 0 4px;
-			border-right: none;
-		}
-
-		.icon_content {
-			display: flex;
-			padding: remy(16);
-			background: #474646;
-			color: #fff;
-			text-align: center;
-			text-align: center;
-			justify-content: center;
-			border-radius: 0 4px 4px 0;
-		}
+		margin-bottom: remy(20);
 	}
 
 	@include desktop {

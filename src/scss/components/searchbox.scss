@@ -1,0 +1,23 @@
+.searchbox_content {
+	width: 100%;
+	display: flex;
+
+	.input_field {
+		width: 100%;
+		padding: remy(10);
+		outline: none;
+		border-radius: 10px 0 0 10px;
+		border-right: none;
+	}
+
+	.icon_content {
+		display: flex;
+		padding: remy(16);
+		background: #474646;
+		color: #fff;
+		text-align: center;
+		text-align: center;
+		justify-content: center;
+		border-radius: 0 10px 10px 0;
+	}
+}

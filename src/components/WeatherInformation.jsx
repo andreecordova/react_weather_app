@@ -6,8 +6,7 @@ import PropTypes from 'prop-types';
 import setBackground from '../functions/setBackground';
 import dateBuild from '../functions/dateBuild';
 
-function WeatherInformation(props) {
-	const { info } = props;
+function WeatherInformation({ info }) {
 	const { name, main, weather, timezone } = info;
 	const name_contry = `${name}`;
 	const temperature = `${Math.round(main.temp)}°C`;
